@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c84310b49e086ed45852390f12e252c4
+timeCreated: 1516998581
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Mattoa Demo
+  fontNames:
+  - Mattoa Demo
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
