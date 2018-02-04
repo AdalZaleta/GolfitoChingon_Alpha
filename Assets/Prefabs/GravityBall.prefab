@@ -129,6 +129,8 @@ MonoBehaviour:
   beingAttractedExpl: 1
   isWating: 0
   Activate: 0
+  FuerzaPersonaje: 1
+  PresicionPersonaje: 1
 --- !u!135 &135245901566408572
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23627777970365280}
   - component: {fileID: 114211750439387094}
   - component: {fileID: 54874595557894850}
+  - component: {fileID: 114216798787764704}
   m_Layer: 0
   m_Name: BlinkBall
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547021142691802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.73, y: -3.38, z: -6.54}
+  m_LocalPosition: {x: -9.911087, y: -8.01, z: -22.073196}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,8 +111,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlinkDistance: 3
-  Activate: 49
   Trap: {fileID: 1390933021309418, guid: d8f9dc80c5669e740b4869f0783aa671, type: 2}
+--- !u!114 &114216798787764704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1547021142691802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c40da917a6bedc429b95993c6da7766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invulerabilityTime: 0
+  triggerInvBlink: 0
+  beingAttractedExpl: 1
+  isWating: 0
+  Activate: 0
+  FuerzaPersonaje: 1
+  PresicionPersonaje: 1
 --- !u!135 &135656875392426636
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -9,6 +9,8 @@ public class AllBallsNeedThis : MonoBehaviour {
 	public bool beingAttractedExpl = true;
 	public bool isWating;
 	public KeyCode Activate;
+	public float FuerzaPersonaje;
+	public float PresicionPersonaje;
 	public void BlinkInv (){
 		triggerInvBlink = true;
 	}

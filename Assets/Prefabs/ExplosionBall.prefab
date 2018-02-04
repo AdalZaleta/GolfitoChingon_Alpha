@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071951240114422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.57, y: -8.11, z: -12.02}
+  m_LocalPosition: {x: -3.400529, y: -11.96, z: -21.333702}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,6 +115,9 @@ MonoBehaviour:
   triggerInvBlink: 0
   beingAttractedExpl: 1
   isWating: 0
+  Activate: 0
+  FuerzaPersonaje: 1
+  PresicionPersonaje: 1
 --- !u!114 &114879452985645486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,7 +131,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExpurosionForce: 10
   AtractionForce: 5
-  Activate: 50
 --- !u!135 &135482582711321012
 SphereCollider:
   m_ObjectHideFlags: 1
