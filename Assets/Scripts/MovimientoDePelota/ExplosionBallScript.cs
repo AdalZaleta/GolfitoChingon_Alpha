@@ -30,6 +30,7 @@ public class ExplosionBallScript : MonoBehaviour {
 	void OnTriggerStay(Collider _col)
 	{
 		if (_col.tag == "Gball" && GetComponent<AllBallsNeedThis>().isWating) {
+			print ("atracted");
 			if(_col.gameObject.GetComponent<AllBallsNeedThis> ().beingAttractedExpl)
 				_col.GetComponent<Rigidbody>().AddForce(Vector3.one-(_col.transform.position - transform.position) * AtractionForce, ForceMode.Acceleration);
 		}
@@ -47,5 +48,8 @@ public class ExplosionBallScript : MonoBehaviour {
 		ammo = true;
 		GetComponent<AllBallsNeedThis> ().beingAttractedExpl = true;
 		GetComponent<AllBallsNeedThis> ().triggerInvBlink = false;
+		gameObject.SetActive (true);
 	}
+
+
 }

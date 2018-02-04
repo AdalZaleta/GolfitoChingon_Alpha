@@ -27,6 +27,9 @@ public class BlinkBallScript : MonoBehaviour {
 			if (go.activeSelf && !gameObject.GetComponent<AllBallsNeedThis> ().isWating) {
 				go.SetActive (false);
 			}
+			else if(!go.activeSelf && gameObject.GetComponent<AllBallsNeedThis>().isWating){
+				go.SetActive (true);
+			}
 		}
 	}
 
@@ -43,5 +46,8 @@ public class BlinkBallScript : MonoBehaviour {
 	public void StartTurn(){
 		GetComponent<AllBallsNeedThis> ().beingAttractedExpl = true;
 		GetComponent<AllBallsNeedThis> ().triggerInvBlink = false;
+		gameObject.SetActive (true);
+		if(go != null)
+			go.SetActive (false);
 	}
 }

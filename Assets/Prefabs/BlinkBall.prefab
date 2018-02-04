@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 135605355695161566}
   m_Layer: 0
   m_Name: BlinkBall
-  m_TagString: Untagged
+  m_TagString: Gball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ Transform:
   m_GameObject: {fileID: 1707480998182842}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.726, y: -2.62, z: -22.87}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -233,9 +233,10 @@ MonoBehaviour:
   triggerInvBlink: 0
   beingAttractedExpl: 1
   isWating: 0
-  Activate: 0
+  Activate: 49
   FuerzaPersonaje: 10
   PresicionPersonaje: 1
+  lastStart: {fileID: 0}
   done: 0
 --- !u!135 &135605355695161566
 SphereCollider:
@@ -243,7 +244,7 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1707480998182842}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 416ccd01d39dd444eabdbd7b3a74d8e4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

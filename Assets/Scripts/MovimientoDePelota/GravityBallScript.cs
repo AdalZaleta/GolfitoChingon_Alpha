@@ -48,5 +48,6 @@ public class GravityBallScript : MonoBehaviour {
 	public void StartTurn(){
 		GetComponent<AllBallsNeedThis> ().beingAttractedExpl = true;
 		GetComponent<AllBallsNeedThis> ().triggerInvBlink = false;
+		gameObject.SetActive (true);
 	}
 }

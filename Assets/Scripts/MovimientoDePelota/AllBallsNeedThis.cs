@@ -16,12 +16,21 @@ public class AllBallsNeedThis : MonoBehaviour {
 	public KeyCode Activate;
 	public float FuerzaPersonaje;
 	public float PresicionPersonaje;
-
+	public Transform lastStart;
 	public bool done;
 
 	void Start()
 	{
 		AS = GetComponent<AudioSource> ();
+		gameObject.SetActive (false);
+		transform.position = lastStart.position;
+	}
+
+	void Update(){
+		if (transform.position.y <= -50f) {
+			OutOfBounds ();
+		}
+		EverythingMustEnd ();
 	}
 
 	void OnCollisionEnter (Collision _col)
@@ -48,5 +57,15 @@ public class AllBallsNeedThis : MonoBehaviour {
 	IEnumerator blinkInv(float time){
 		yield return new WaitForSeconds (time);
 		triggerInvBlink = false;
+	}
+
+	public void OutOfBounds(){
+		transform.position = lastStart.position;
+		GetComponent<Rigidbody> ().velocity = Vector3.zero;
+		print ("out of bouds: " + lastStart.position);
+	}
+
+	void EverythingMustEnd(){
+		GetComponent<Rigidbody> ().velocity -= GetComponent<Rigidbody> ().velocity.normalized * 0.5f * Time.deltaTime;
 	}
 }

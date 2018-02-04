@@ -29,8 +29,8 @@ GameObject:
   - component: {fileID: 114569090493654784}
   - component: {fileID: 135234208639262602}
   m_Layer: 0
-  m_Name: Grav_Textured
-  m_TagString: Untagged
+  m_Name: GravityBall
+  m_TagString: Gball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,8 +42,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1772903818824908}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0737921, y: -5.033839, z: -15.937853}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: 7.87, y: -2.85, z: -22.29}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -220,9 +220,10 @@ MonoBehaviour:
   triggerInvBlink: 0
   beingAttractedExpl: 1
   isWating: 1
-  Activate: 0
-  FuerzaPersonaje: 100
+  Activate: 49
+  FuerzaPersonaje: 10
   PresicionPersonaje: 1
+  lastStart: {fileID: 0}
   done: 0
 --- !u!114 &114847764265615906
 MonoBehaviour:
@@ -249,7 +250,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 1.4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135562693072704656
 SphereCollider:
@@ -257,7 +258,7 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1772903818824908}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 416ccd01d39dd444eabdbd7b3a74d8e4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

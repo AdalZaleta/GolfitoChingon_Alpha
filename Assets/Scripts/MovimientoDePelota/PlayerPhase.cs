@@ -29,10 +29,11 @@ public class PlayerPhase : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		currentPlayer = Player1;
-		direccion = Vector3.forward;
+		direccion = Vector3.left;
 		CamDir = direccion;
 		phase = 0;
 		playerChanger = false;
+		Player1.GetComponent<ExplosionBallScript> ().StartTurn ();
 		Player1.GetComponent<AllBallsNeedThis> ().isWating = false;
 		Player2.GetComponent<AllBallsNeedThis> ().isWating = true;
 		Player3.GetComponent<AllBallsNeedThis> ().isWating = true;
@@ -86,6 +87,7 @@ public class PlayerPhase : MonoBehaviour {
 			break;	
 		case 2:
 			if (!playerChanger) {
+				currentPlayer.GetComponent<AllBallsNeedThis> ().lastStart.position = currentPlayer.transform.position;
 				currentPlayer.GetComponent<Rigidbody> ().AddForce (direccion * fuerzaSlider.value * currentPlayer.GetComponent<AllBallsNeedThis> ().FuerzaPersonaje, ForceMode.Impulse);
 				StartCoroutine (changePlayer ());
 			}
