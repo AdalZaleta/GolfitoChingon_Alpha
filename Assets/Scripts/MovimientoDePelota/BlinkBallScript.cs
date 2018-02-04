@@ -6,12 +6,13 @@ using UnityEngine;
 public class BlinkBallScript : MonoBehaviour {
 
 	public float BlinkDistance;
-	public KeyCode Activate;
+	KeyCode Activate;
 	public GameObject Trap;
 	Rigidbody rigi;
 	// Use this for initialization
 	void Start () {
 		rigi = GetComponent<Rigidbody> ();
+		Activate = GetComponent<AllBallsNeedThis> ().Activate;
 	}
 	
 	// Update is called once per frame
