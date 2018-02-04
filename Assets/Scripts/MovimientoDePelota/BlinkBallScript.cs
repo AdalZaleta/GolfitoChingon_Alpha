@@ -7,6 +7,7 @@ public class BlinkBallScript : MonoBehaviour {
 
 	public float BlinkDistance;
 	public KeyCode Activate;
+	public GameObject Trap;
 	Rigidbody rigi;
 	// Use this for initialization
 	void Start () {
@@ -16,11 +17,16 @@ public class BlinkBallScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (Activate)) {
-			transform.Translate (rigi.velocity.normalized.x * BlinkDistance,
-				rigi.velocity.normalized.y * BlinkDistance,
-				rigi.velocity.normalized.z * BlinkDistance,
-				Space.World); 
-			
+			Blink ();
 		}
+	}
+
+	void Blink(){
+		GameObject go = Instantiate (Trap);
+		go.transform.position = transform.position;
+		transform.Translate (rigi.velocity.normalized.x * BlinkDistance,
+		rigi.velocity.normalized.y * BlinkDistance,
+		rigi.velocity.normalized.z * BlinkDistance,
+		Space.World); 
 	}
 }
