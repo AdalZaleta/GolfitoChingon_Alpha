@@ -7,6 +7,7 @@ public class BlinkBallPassive : MonoBehaviour {
 	public float revertSeconds;
 	void OnTriggerEnter(Collider _col)
 	{
+		print ("Entro al trigger");
 		if(_col.tag == "Gball")
 		{
 			if(!_col.GetComponent<AllBallsNeedThis>().triggerInvBlink){
