@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 135790720884851694}
   m_Layer: 0
   m_Name: ExplosionBall
-  m_TagString: Untagged
+  m_TagString: Gball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,13 +111,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c40da917a6bedc429b95993c6da7766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AS: {fileID: 0}
+  ChoqueParedSFX: {fileID: 0}
+  ChoquePelotaSFX: {fileID: 0}
   invulerabilityTime: 1
   triggerInvBlink: 0
   beingAttractedExpl: 1
-  isWating: 0
-  Activate: 0
-  FuerzaPersonaje: 1
+  isWating: 1
+  Activate: 32
+  FuerzaPersonaje: 10
   PresicionPersonaje: 1
+  done: 0
 --- !u!114 &114879452985645486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cb86a56a23abf42b7487341f5148c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AS: {fileID: 0}
+  ExplosionSound: {fileID: 0}
   ExpurosionForce: 10
   AtractionForce: 5
 --- !u!135 &135482582711321012

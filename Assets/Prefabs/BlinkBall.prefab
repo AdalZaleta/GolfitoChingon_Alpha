@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114216798787764704}
   m_Layer: 0
   m_Name: BlinkBall
-  m_TagString: Untagged
+  m_TagString: Gball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe4fa300a294e94caefef0dd0823ae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AS: {fileID: 0}
+  BlinkSound: {fileID: 0}
   BlinkDistance: 3
   Trap: {fileID: 1390933021309418, guid: d8f9dc80c5669e740b4869f0783aa671, type: 2}
 --- !u!114 &114216798787764704
@@ -123,13 +125,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c40da917a6bedc429b95993c6da7766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AS: {fileID: 0}
+  ChoqueParedSFX: {fileID: 0}
+  ChoquePelotaSFX: {fileID: 0}
   invulerabilityTime: 0
   triggerInvBlink: 0
   beingAttractedExpl: 1
   isWating: 0
   Activate: 0
-  FuerzaPersonaje: 1
+  FuerzaPersonaje: 100
   PresicionPersonaje: 1
+  done: 0
 --- !u!135 &135656875392426636
 SphereCollider:
   m_ObjectHideFlags: 1

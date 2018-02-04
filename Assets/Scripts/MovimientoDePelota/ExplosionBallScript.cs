@@ -8,6 +8,7 @@ public class ExplosionBallScript : MonoBehaviour {
 	public AudioClip ExplosionSound;
 	public float ExpurosionForce;
 	public float AtractionForce;
+	bool ammo = true;
 	KeyCode Activate;
 	Rigidbody rigi;
 	// Use this for initialization
@@ -19,15 +20,16 @@ public class ExplosionBallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (Activate) && !GetComponent<AllBallsNeedThis> ().isWating) {
+		if (Input.GetKeyDown (Activate) && !GetComponent<AllBallsNeedThis> ().isWating && ammo) {
 			rigi.AddForce (new Vector3 (0f, ExpurosionForce, 0f), ForceMode.Impulse);
 			AS.PlayOneShot (ExplosionSound);
+			ammo = false;
 		}
 	}
 
 	void OnTriggerStay(Collider _col)
 	{
-		if (_col.tag == "Gball") {
+		if (_col.tag == "Gball" && GetComponent<AllBallsNeedThis>().isWating) {
 			if(_col.gameObject.GetComponent<AllBallsNeedThis> ().beingAttractedExpl)
 				_col.GetComponent<Rigidbody>().AddForce(Vector3.one-(_col.transform.position - transform.position) * AtractionForce, ForceMode.Acceleration);
 		}
@@ -35,9 +37,15 @@ public class ExplosionBallScript : MonoBehaviour {
 
 	void OnCollisionEnter(Collision _col)
 	{
-		if (_col.gameObject.tag == "Gball") {
+		if (_col.gameObject.tag == "Gball" && !GetComponent<AllBallsNeedThis>().isWating) {
 			_col.rigidbody.velocity = Vector3.zero;
 			_col.gameObject.GetComponent<AllBallsNeedThis> ().beingAttractedExpl = false;
 		}
+	}
+
+	public void StartTurn(){
+		ammo = true;
+		GetComponent<AllBallsNeedThis> ().beingAttractedExpl = true;
+		GetComponent<AllBallsNeedThis> ().triggerInvBlink = false;
 	}
 }

@@ -9,6 +9,7 @@ public class BlinkBallScript : MonoBehaviour {
 	public float BlinkDistance;
 	KeyCode Activate;
 	public GameObject Trap;
+	GameObject go;
 	Rigidbody rigi;
 	// Use this for initialization
 	void Start () {
@@ -22,15 +23,25 @@ public class BlinkBallScript : MonoBehaviour {
 		if (Input.GetKeyDown (Activate)) {
 			Blink ();
 		}
+		if (go != null) {
+			if (go.activeSelf && !gameObject.GetComponent<AllBallsNeedThis> ().isWating) {
+				go.SetActive (false);
+			}
+		}
 	}
 
 	void Blink(){
 		AS.PlayOneShot (BlinkSound);
-		GameObject go = Instantiate (Trap);
+		go = Instantiate (Trap);
 		go.transform.position = transform.position;
 		transform.Translate (rigi.velocity.normalized.x * BlinkDistance,
 		rigi.velocity.normalized.y * BlinkDistance,
 		rigi.velocity.normalized.z * BlinkDistance,
 		Space.World); 
+	}
+
+	public void StartTurn(){
+		GetComponent<AllBallsNeedThis> ().beingAttractedExpl = true;
+		GetComponent<AllBallsNeedThis> ().triggerInvBlink = false;
 	}
 }

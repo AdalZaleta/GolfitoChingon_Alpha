@@ -16,6 +16,7 @@ public class AllBallsNeedThis : MonoBehaviour {
 	public KeyCode Activate;
 	public float FuerzaPersonaje;
 	public float PresicionPersonaje;
+	public bool done;
 	void Start()
 	{
 		AS = GetComponent<AudioSource> ();
@@ -23,15 +24,14 @@ public class AllBallsNeedThis : MonoBehaviour {
 
 	void OnCollisionEnter (Collision _col)
 	{
-		if (_col.gameObject.CompareTag ("BlinkBall")) {
+		if (_col.gameObject.CompareTag ("Gball")) {
 			AS.PlayOneShot (ChoquePelotaSFX);
 		}
-		if (_col.gameObject.CompareTag ("GavityBall")) {
-			AS.PlayOneShot (ChoquePelotaSFX);
-		}
-		if (_col.gameObject.CompareTag ("ExplotionBall")) {
-			AS.PlayOneShot (ChoquePelotaSFX);
-		}
+	}
+
+	public void Saludar(){
+		print (FuerzaPersonaje);
+		GetComponent<Rigidbody> ().AddForce (Vector3.up * 100);
 	}
 
 	public void BlinkInv (){

@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 135245901566408572}
   m_Layer: 0
   m_Name: GravityBall
-  m_TagString: Untagged
+  m_TagString: Gball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d73310a2cd8dc2498c486f89a42cfcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AS: {fileID: 0}
+  GravitySound: {fileID: 0}
   activeDuration: 3
   GravityEmpowerRatio: 150
 --- !u!114 &114808072160500146
@@ -124,13 +126,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c40da917a6bedc429b95993c6da7766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AS: {fileID: 0}
+  ChoqueParedSFX: {fileID: 0}
+  ChoquePelotaSFX: {fileID: 0}
   invulerabilityTime: 1
   triggerInvBlink: 0
   beingAttractedExpl: 1
-  isWating: 0
+  isWating: 1
   Activate: 0
-  FuerzaPersonaje: 1
+  FuerzaPersonaje: 100
   PresicionPersonaje: 1
+  done: 0
 --- !u!135 &135245901566408572
 SphereCollider:
   m_ObjectHideFlags: 1

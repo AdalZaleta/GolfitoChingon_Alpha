@@ -44,4 +44,9 @@ public class GravityBallScript : MonoBehaviour {
 			_col.GetComponent<Rigidbody> ().AddForce (Vector3.down * GravityEmpowerRatio, ForceMode.Acceleration);
 		}
 	}
+
+	public void StartTurn(){
+		GetComponent<AllBallsNeedThis> ().beingAttractedExpl = true;
+		GetComponent<AllBallsNeedThis> ().triggerInvBlink = false;
+	}
 }
