@@ -16,7 +16,9 @@ public class AllBallsNeedThis : MonoBehaviour {
 	public KeyCode Activate;
 	public float FuerzaPersonaje;
 	public float PresicionPersonaje;
+
 	public bool done;
+
 	void Start()
 	{
 		AS = GetComponent<AudioSource> ();

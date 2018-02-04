@@ -85,9 +85,10 @@ public class PlayerPhase : MonoBehaviour {
 			}
 			break;	
 		case 2:
-			currentPlayer.GetComponent<Rigidbody> ().AddForce (direccion * fuerzaSlider.value * currentPlayer.GetComponent<AllBallsNeedThis> ().FuerzaPersonaje, ForceMode.Impulse);
-			if(!playerChanger)
+			if (!playerChanger) {
+				currentPlayer.GetComponent<Rigidbody> ().AddForce (direccion * fuerzaSlider.value * currentPlayer.GetComponent<AllBallsNeedThis> ().FuerzaPersonaje, ForceMode.Impulse);
 				StartCoroutine (changePlayer ());
+			}
 			//print (currentPlayer.GetComponent<Rigidbody> ().velocity);
 			break;
 		}
