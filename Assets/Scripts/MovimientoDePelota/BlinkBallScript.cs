@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[RequireComponent(typeof(AudioSource))]
 public class BlinkBallScript : MonoBehaviour {
-
+	public AudioSource AS;
+	public AudioClip BlinkSound;
 	public float BlinkDistance;
 	KeyCode Activate;
 	public GameObject Trap;
 	Rigidbody rigi;
 	// Use this for initialization
 	void Start () {
+		AS = GetComponent<AudioSource>();
 		rigi = GetComponent<Rigidbody> ();
 		Activate = GetComponent<AllBallsNeedThis> ().Activate;
 	}
@@ -23,6 +25,7 @@ public class BlinkBallScript : MonoBehaviour {
 	}
 
 	void Blink(){
+		AS.PlayOneShot (BlinkSound);
 		GameObject go = Instantiate (Trap);
 		go.transform.position = transform.position;
 		transform.Translate (rigi.velocity.normalized.x * BlinkDistance,

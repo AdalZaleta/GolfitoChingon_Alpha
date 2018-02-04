@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class GravityBallScript : MonoBehaviour {
-
+	public AudioSource AS;
+	public AudioClip GravitySound;
 	KeyCode Activate;
 	public float activeDuration;
 	public float GravityEmpowerRatio;
 	Rigidbody rigi;
 	// Use this for initialization
 	void Start () {
+		AS = GetComponent<AudioSource> ();
 		rigi = GetComponent<Rigidbody> ();
 		Activate = GetComponent<AllBallsNeedThis> ().Activate;
 	}
@@ -18,6 +21,7 @@ public class GravityBallScript : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey (Activate)) {
 			StartCoroutine (antiGravity());
+			AS.PlayOneShot (GravitySound);
 		}
 	}
 

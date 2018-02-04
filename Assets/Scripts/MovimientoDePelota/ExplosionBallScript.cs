@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class ExplosionBallScript : MonoBehaviour {
-
+	public AudioSource AS;
+	public AudioClip ExplosionSound;
 	public float ExpurosionForce;
 	public float AtractionForce;
 	KeyCode Activate;
 	Rigidbody rigi;
 	// Use this for initialization
 	void Start () {
+		AS = GetComponent<AudioSource> ();
 		rigi = GetComponent<Rigidbody> ();
 		Activate = GetComponent<AllBallsNeedThis> ().Activate;
 	}
@@ -18,6 +21,7 @@ public class ExplosionBallScript : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (Activate) && !GetComponent<AllBallsNeedThis> ().isWating) {
 			rigi.AddForce (new Vector3 (0f, ExpurosionForce, 0f), ForceMode.Impulse);
+			AS.PlayOneShot (ExplosionSound);
 		}
 	}
 
