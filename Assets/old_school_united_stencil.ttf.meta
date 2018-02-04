@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e051284131c01d34e9e7c2fa0365c08c
+timeCreated: 1517704291
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Old School United
+  fontNames:
+  - Old School United
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

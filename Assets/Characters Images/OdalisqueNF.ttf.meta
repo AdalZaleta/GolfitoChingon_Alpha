@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: dda47a99c25137c4f91587fbc282bbca
+timeCreated: 1517706165
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Odalisque NF
+  fontNames:
+  - Odalisque NF
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
