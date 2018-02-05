@@ -106,12 +106,14 @@ public class PlayerPhase : MonoBehaviour {
 			if (!Player2.GetComponent<AllBallsNeedThis> ().done) {
 				currentPlayer = Player2;
 				Player2.GetComponent<BlinkBallScript> ().StartTurn();
+				Player1.GetComponent<ExplosionBallScript> ().notMyTurn ();
 				Player1.GetComponent<AllBallsNeedThis> ().isWating = true;
 				Player2.GetComponent<AllBallsNeedThis> ().isWating = false;
 				Player3.GetComponent<AllBallsNeedThis> ().isWating = true;
 			} else if(!Player3.GetComponent<AllBallsNeedThis>().done){
 				currentPlayer = Player3;
 				Player3.GetComponent<GravityBallScript> ().StartTurn();
+				Player1.GetComponent<ExplosionBallScript> ().notMyTurn ();
 				Player1.GetComponent<AllBallsNeedThis> ().isWating = true;
 				Player2.GetComponent<AllBallsNeedThis> ().isWating = true;
 				Player3.GetComponent<AllBallsNeedThis> ().isWating = false;
@@ -120,6 +122,7 @@ public class PlayerPhase : MonoBehaviour {
 			if (!Player3.GetComponent<AllBallsNeedThis> ().done) {
 				currentPlayer = Player3;
 				Player3.GetComponent<GravityBallScript> ().StartTurn();
+				Player1.GetComponent<ExplosionBallScript> ().notMyTurn ();
 				Player1.GetComponent<AllBallsNeedThis> ().isWating = true;
 				Player2.GetComponent<AllBallsNeedThis> ().isWating = true;
 				Player3.GetComponent<AllBallsNeedThis> ().isWating = false;
@@ -140,6 +143,7 @@ public class PlayerPhase : MonoBehaviour {
 			} else if(!Player2.GetComponent<AllBallsNeedThis>().done){
 				currentPlayer = Player2;
 				Player2.GetComponent<BlinkBallScript> ().StartTurn();
+				Player1.GetComponent<ExplosionBallScript> ().notMyTurn ();
 				Player1.GetComponent<AllBallsNeedThis> ().isWating = true;
 				Player2.GetComponent<AllBallsNeedThis> ().isWating = false;
 				Player3.GetComponent<AllBallsNeedThis> ().isWating = true;

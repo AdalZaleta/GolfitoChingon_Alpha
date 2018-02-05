@@ -214,7 +214,7 @@ MonoBehaviour:
   AS: {fileID: 0}
   BlinkSound: {fileID: 0}
   BlinkDistance: 3
-  Trap: {fileID: 1390933021309418, guid: d8f9dc80c5669e740b4869f0783aa671, type: 2}
+  Trap: {fileID: 1609872234688370, guid: d8f9dc80c5669e740b4869f0783aa671, type: 2}
 --- !u!114 &114210997759986872
 MonoBehaviour:
   m_ObjectHideFlags: 1

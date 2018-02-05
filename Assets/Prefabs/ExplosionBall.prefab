@@ -214,8 +214,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AS: {fileID: 0}
   ExplosionSound: {fileID: 0}
-  ExpurosionForce: 10
+  ExpurosionForce: 3
   AtractionForce: 5
+  magnitudeVisible: 0
 --- !u!114 &114534384990963094
 MonoBehaviour:
   m_ObjectHideFlags: 1

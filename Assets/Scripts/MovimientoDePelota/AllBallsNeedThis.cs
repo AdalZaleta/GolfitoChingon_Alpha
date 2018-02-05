@@ -66,6 +66,11 @@ public class AllBallsNeedThis : MonoBehaviour {
 	}
 
 	void EverythingMustEnd(){
-		GetComponent<Rigidbody> ().velocity -= GetComponent<Rigidbody> ().velocity.normalized * 0.5f * Time.deltaTime;
+		if (GetComponent<Rigidbody> ().velocity.magnitude <= 0.5f) {
+			GetComponent<Rigidbody> ().velocity -= GetComponent<Rigidbody> ().velocity.normalized * 0.1f * Time.deltaTime;
+		}
+		if (GetComponent<Rigidbody> ().velocity.magnitude <= 0.05f) {
+			GetComponent<Rigidbody> ().velocity = Vector3.zero;
+		}
 	}
 }

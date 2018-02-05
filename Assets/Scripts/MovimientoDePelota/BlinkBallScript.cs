@@ -9,7 +9,6 @@ public class BlinkBallScript : MonoBehaviour {
 	public float BlinkDistance;
 	KeyCode Activate;
 	public GameObject Trap;
-	GameObject go;
 	Rigidbody rigi;
 	// Use this for initialization
 	void Start () {
@@ -20,23 +19,16 @@ public class BlinkBallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (Activate)) {
+		if (Input.GetKeyDown (Activate) && !GetComponent<AllBallsNeedThis> ().isWating) {
 			Blink ();
-		}
-		if (go != null) {
-			if (go.activeSelf && !gameObject.GetComponent<AllBallsNeedThis> ().isWating) {
-				go.SetActive (false);
-			}
-			else if(!go.activeSelf && gameObject.GetComponent<AllBallsNeedThis>().isWating){
-				go.SetActive (true);
-			}
 		}
 	}
 
 	void Blink(){
 		AS.PlayOneShot (BlinkSound);
-		go = Instantiate (Trap);
+		GameObject go = Instantiate (Trap);
 		go.transform.position = transform.position;
+		go.GetComponent<BlinkBallPassive> ().BlinkTrapParent = gameObject;
 		transform.Translate (rigi.velocity.normalized.x * BlinkDistance,
 		rigi.velocity.normalized.y * BlinkDistance,
 		rigi.velocity.normalized.z * BlinkDistance,
@@ -47,7 +39,5 @@ public class BlinkBallScript : MonoBehaviour {
 		GetComponent<AllBallsNeedThis> ().beingAttractedExpl = true;
 		GetComponent<AllBallsNeedThis> ().triggerInvBlink = false;
 		gameObject.SetActive (true);
-		if(go != null)
-			go.SetActive (false);
 	}
 }

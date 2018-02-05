@@ -239,7 +239,7 @@ MonoBehaviour:
   AS: {fileID: 0}
   GravitySound: {fileID: 0}
   activeDuration: 3
-  GravityEmpowerRatio: 150
+  GravityEmpowerRatio: 15
 --- !u!135 &135234208639262602
 SphereCollider:
   m_ObjectHideFlags: 1

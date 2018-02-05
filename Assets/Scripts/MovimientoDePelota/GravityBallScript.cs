@@ -19,7 +19,7 @@ public class GravityBallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (Activate)) {
+		if (Input.GetKey (Activate) && !GetComponent<AllBallsNeedThis> ().isWating) {
 			StartCoroutine (antiGravity());
 			AS.PlayOneShot (GravitySound);
 		}
@@ -40,7 +40,7 @@ public class GravityBallScript : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider _col){
-		if (_col.CompareTag ("Gball")) {
+		if (_col.CompareTag ("Gball") && GetComponent<AllBallsNeedThis>().isWating) {
 			_col.GetComponent<Rigidbody> ().AddForce (Vector3.down * GravityEmpowerRatio, ForceMode.Acceleration);
 		}
 	}
