@@ -17,6 +17,8 @@ public class PlayerPhase : MonoBehaviour {
 	public KeyCode Go;
 	public KeyCode NoGo;
 
+	public GameObject Arrow;
+
 	int phase;
 	Vector3 direccion;
 	Vector3 CamDir;
@@ -49,11 +51,22 @@ public class PlayerPhase : MonoBehaviour {
 		switch (phase) {
 		case 0:
 			shootUI.enabled = false;
+
+			if (!Arrow.activeSelf)
+				Arrow.SetActive (true);
+
+			Arrow.transform.position = currentPlayer.transform.position + direccion * 2;
+			Arrow.transform.rotation.SetFromToRotation (currentPlayer.transform.position, Arrow.transform.position);
+
+
 			cam.transform.position = currentPlayer.transform.position - new Vector3 (CamDir.x, CamDir.y + yOffset, CamDir.z) * offsetCamMag;
 			cam.transform.LookAt (currentPlayer.transform.position);
+
+			Arrow.transform.rotation.eulerAngles.Set (0f, cam.transform.rotation.eulerAngles.y, 0f);
 			if (Input.GetKey (Left)) {
 				direccion = Quaternion.AngleAxis (25 * Time.deltaTime, Vector3.up) * direccion;
 				CamDir = Quaternion.AngleAxis (25 * Time.deltaTime, Vector3.up) * CamDir;
+
 			}
 			if (Input.GetKey (Right)) {
 				direccion = Quaternion.AngleAxis (-25 * Time.deltaTime, Vector3.up) * direccion;
@@ -70,6 +83,7 @@ public class PlayerPhase : MonoBehaviour {
 			}
 			break;
 		case 1:
+			
 			shootUI.enabled = true;
 			fuerzaSlider.value += fuerzaSliderDir * currentPlayer.GetComponent<AllBallsNeedThis> ().PresicionPersonaje * Time.deltaTime;
 			if (fuerzaSlider.value >= 1)
@@ -86,6 +100,9 @@ public class PlayerPhase : MonoBehaviour {
 			}
 			break;	
 		case 2:
+			if (Arrow.activeSelf)
+				Arrow.SetActive (false);
+
 			if (!playerChanger) {
 				currentPlayer.GetComponent<AllBallsNeedThis> ().lastStart.position = currentPlayer.transform.position;
 				currentPlayer.GetComponent<Rigidbody> ().AddForce (direccion * fuerzaSlider.value * currentPlayer.GetComponent<AllBallsNeedThis> ().FuerzaPersonaje, ForceMode.Impulse);
