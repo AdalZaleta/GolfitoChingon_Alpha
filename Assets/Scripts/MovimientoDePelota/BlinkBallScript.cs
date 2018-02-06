@@ -10,11 +10,7 @@ public class BlinkBallScript : MonoBehaviour {
 	KeyCode Activate;
 	public GameObject Trap;
 	Rigidbody rigi;
-<<<<<<< HEAD
 	ParticleSystem Vortex;
-=======
-	bool ammo;
->>>>>>> 1f5b75e1bd170cf82f8ed61c473460ab930530c0
 	// Use this for initialization
 	void Start () {
 		AS = GetComponent<AudioSource>();
@@ -25,13 +21,8 @@ public class BlinkBallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-<<<<<<< HEAD
 		if (Input.GetKeyDown (Activate) && !GetComponent<AllBallsNeedThis> ().isWating) {
 			StartCoroutine (prepareBlink ());
-=======
-		if (Input.GetKeyDown (Activate) && !GetComponent<AllBallsNeedThis> ().isWating && ammo) {
-			Blink ();
->>>>>>> 1f5b75e1bd170cf82f8ed61c473460ab930530c0
 		}
 	}
 
@@ -52,13 +43,11 @@ public class BlinkBallScript : MonoBehaviour {
 		rigi.velocity.normalized.y * BlinkDistance,
 		rigi.velocity.normalized.z * BlinkDistance,
 		Space.World); 
-		ammo = false;
 	}
 
 	public void StartTurn(){
 		GetComponent<AllBallsNeedThis> ().beingAttractedExpl = true;
 		GetComponent<AllBallsNeedThis> ().triggerInvBlink = false;
 		gameObject.SetActive (true);
-		ammo = true;
 	}
 }
