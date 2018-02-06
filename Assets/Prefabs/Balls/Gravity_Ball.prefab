@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 82571588236738062}
   - component: {fileID: 114077877216079908}
   - component: {fileID: 114478791621354622}
+  - component: {fileID: 135631258472809750}
   m_Layer: 0
   m_Name: Gravity_Ball
   m_TagString: Untagged
@@ -201,8 +202,8 @@ MonoBehaviour:
   triggerInvBlink: 0
   beingAttractedExpl: 1
   isWating: 0
-  Activate: 0
-  FuerzaPersonaje: 3
+  Activate: 113
+  FuerzaPersonaje: 22
   PresicionPersonaje: 3
   lastStart: {fileID: 0}
   done: 0
@@ -227,9 +228,21 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1014282155542586}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7af0075c14d9acf40ba890923f0732f1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.0492404
+  m_Center: {x: 0, y: 0, z: 0.0000000018626451}
+--- !u!135 &135631258472809750
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1014282155542586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0.0000000018626451}

@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 82304952569505074}
   - component: {fileID: 114335305631044170}
   - component: {fileID: 114076729397089182}
+  - component: {fileID: 135411602218885178}
   m_Layer: 0
   m_Name: Explosion_Ball
   m_TagString: Untagged
@@ -55,7 +56,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -73,7 +73,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -199,7 +198,6 @@ MonoBehaviour:
   ExplosionSound: {fileID: 0}
   ExpurosionForce: 3
   AtractionForce: 3
-  magnitudeVisible: 3
 --- !u!114 &114335305631044170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,8 +216,8 @@ MonoBehaviour:
   triggerInvBlink: 0
   beingAttractedExpl: 1
   isWating: 0
-  Activate: 0
-  FuerzaPersonaje: 3
+  Activate: 113
+  FuerzaPersonaje: 20
   PresicionPersonaje: 3
   lastStart: {fileID: 0}
   done: 0
@@ -229,9 +227,21 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1245273175727502}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7af0075c14d9acf40ba890923f0732f1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.051355183
+  m_Center: {x: 1.110223e-16, y: 0.0000000018626454, z: -0.0000000055879354}
+--- !u!135 &135411602218885178
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245273175727502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
   m_Center: {x: 1.110223e-16, y: 0.0000000018626454, z: -0.0000000055879354}
