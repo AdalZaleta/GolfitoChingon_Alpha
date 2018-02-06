@@ -19,9 +19,10 @@ public class PlayerPhase : MonoBehaviour {
 
 	public GameObject Arrow;
 
-	int phase;
+	public int phase;
 	Vector3 direccion;
 	Vector3 CamDir;
+	public float camvel;
 	public float offsetCamMag;
 	float tiroFuerza;
 	int fuerzaSliderDir = 1;
@@ -61,19 +62,19 @@ public class PlayerPhase : MonoBehaviour {
 
 			Arrow.transform.rotation.eulerAngles.Set (0f, cam.transform.rotation.eulerAngles.y, 0f);
 			if (Input.GetKey (Left)) {
-				direccion = Quaternion.AngleAxis (25 * Time.deltaTime, Vector3.up) * direccion;
-				CamDir = Quaternion.AngleAxis (25 * Time.deltaTime, Vector3.up) * CamDir;
+				direccion = Quaternion.AngleAxis (camvel * Time.deltaTime, Vector3.up) * direccion;
+				CamDir = Quaternion.AngleAxis (camvel * Time.deltaTime, Vector3.up) * CamDir;
 
 			}
 			if (Input.GetKey (Right)) {
-				direccion = Quaternion.AngleAxis (-25 * Time.deltaTime, Vector3.up) * direccion;
-				CamDir = Quaternion.AngleAxis (-25 * Time.deltaTime, Vector3.up) * CamDir;
+				direccion = Quaternion.AngleAxis (-camvel * Time.deltaTime, Vector3.up) * direccion;
+				CamDir = Quaternion.AngleAxis (-camvel * Time.deltaTime, Vector3.up) * CamDir;
 			}
 			if (Input.GetKey (Up)) {
-				CamDir = Quaternion.AngleAxis (25 * Time.deltaTime, Vector3.Cross (Vector3.up, CamDir)) * CamDir;
+				CamDir = Quaternion.AngleAxis (camvel * Time.deltaTime, Vector3.Cross (Vector3.up, CamDir)) * CamDir;
 			}
 			if (Input.GetKey (Down)) {
-				CamDir = Quaternion.AngleAxis (-25 * Time.deltaTime, Vector3.Cross (Vector3.up, CamDir)) * CamDir;
+				CamDir = Quaternion.AngleAxis (-camvel * Time.deltaTime, Vector3.Cross (Vector3.up, CamDir)) * CamDir;
 			}
 			if (Input.GetKeyDown (Go)) {
 				phase = 1;
@@ -93,7 +94,7 @@ public class PlayerPhase : MonoBehaviour {
 				phase = 2;
 			}
 			if (Input.GetKeyDown (NoGo)) {
-				phase = 1;
+				phase = 0;
 			}
 			break;	
 		case 2:
@@ -104,6 +105,21 @@ public class PlayerPhase : MonoBehaviour {
 				currentPlayer.GetComponent<AllBallsNeedThis> ().lastStart.position = currentPlayer.transform.position;
 				currentPlayer.GetComponent<Rigidbody> ().AddForce (direccion * fuerzaSlider.value * currentPlayer.GetComponent<AllBallsNeedThis> ().FuerzaPersonaje, ForceMode.Impulse);
 				StartCoroutine (changePlayer ());
+			}
+			if (Input.GetKey (Left)) {
+				direccion = Quaternion.AngleAxis (camvel * Time.deltaTime, Vector3.up) * direccion;
+				CamDir = Quaternion.AngleAxis (camvel * Time.deltaTime, Vector3.up) * CamDir;
+
+			}
+			if (Input.GetKey (Right)) {
+				direccion = Quaternion.AngleAxis (-camvel * Time.deltaTime, Vector3.up) * direccion;
+				CamDir = Quaternion.AngleAxis (-camvel * Time.deltaTime, Vector3.up) * CamDir;
+			}
+			if (Input.GetKey (Up)) {
+				CamDir = Quaternion.AngleAxis (camvel * Time.deltaTime, Vector3.Cross (Vector3.up, CamDir)) * CamDir;
+			}
+			if (Input.GetKey (Down)) {
+				CamDir = Quaternion.AngleAxis (-camvel * Time.deltaTime, Vector3.Cross (Vector3.up, CamDir)) * CamDir;
 			}
 			//print (currentPlayer.GetComponent<Rigidbody> ().velocity);
 			break;
@@ -165,5 +181,24 @@ public class PlayerPhase : MonoBehaviour {
 		}
 		phase = 0;
 		playerChanger = false;
+	}
+
+	public void SwitchHoles(int wich){
+		for(int i = 0; i < 10; i++){
+			string numero;
+			if(i < 10){
+				numero = "0" + i.ToString();
+			}else{
+				numero = i.ToString();
+			}
+			string NombreObjeto = "Hole_" + numero;
+			if (i == wich) {
+				if(GameObject.Find (NombreObjeto) != null)
+					GameObject.Find (NombreObjeto).GetComponentInChildren<LimitBoxes> ().currentHole = true;
+			} else {
+				if(GameObject.Find (NombreObjeto) != null)
+					GameObject.Find (NombreObjeto).GetComponentInChildren<LimitBoxes> ().currentHole = false;
+			}
+		}
 	}
 }
