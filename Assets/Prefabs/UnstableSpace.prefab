@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33145076257474534}
   - component: {fileID: 135226079478402552}
   - component: {fileID: 23300914099049426}
-  - component: {fileID: 114516822700063780}
+  - component: {fileID: 114629625328769640}
   m_Layer: 0
   m_Name: UnstableSpace
   m_TagString: Untagged
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1609872234688370}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114516822700063780
+--- !u!114 &114629625328769640
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -90,10 +90,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1609872234688370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d0e1ab19169b4345b6ee3493cd80985, type: 3}
+  m_Script: {fileID: 11500000, guid: bad56009b4ecb39458ded93be9aee21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  revertSeconds: 2
+  revertSeconds: 1
   BlinkTrapParent: {fileID: 0}
 --- !u!135 &135226079478402552
 SphereCollider:
