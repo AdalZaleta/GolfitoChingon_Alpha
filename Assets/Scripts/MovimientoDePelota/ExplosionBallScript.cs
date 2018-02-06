@@ -7,9 +7,8 @@ public class ExplosionBallScript : MonoBehaviour {
 	public AudioSource AS;
 	public AudioClip ExplosionSound;
 	public float ExpurosionForce;
-	public float AtractionForce;
 	bool ammo = true;
-	bool isAbsorbing;
+	public bool isAbsorbing;
 	KeyCode Activate;
 	Rigidbody rigi;
 	// Use this for initialization
@@ -28,21 +27,11 @@ public class ExplosionBallScript : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerStay(Collider _col)
-	{
-		if (_col.tag == "Gball" && GetComponent<AllBallsNeedThis> ().isWating && isAbsorbing) {
-			if (_col.gameObject.GetComponent<AllBallsNeedThis> ().beingAttractedExpl) {
-				_col.GetComponent<Rigidbody> ().AddForce (Vector3.one - (_col.transform.position - transform.position) * AtractionForce, ForceMode.Acceleration);
-				print ("atracted");
-			}
-		}
-	}
-
 	void OnCollisionEnter(Collision _col)
 	{
 		print ("something colided: " + _col.gameObject.tag);
 		if (_col.gameObject.tag == "Gball" && GetComponent<AllBallsNeedThis>().isWating) {
-			_col.rigidbody.velocity = Vector3.zero;
+			stopCollided (_col);
 			_col.gameObject.GetComponent<AllBallsNeedThis> ().beingAttractedExpl = false;
 			isAbsorbing = false;
 			print ("A ball colided");
@@ -59,5 +48,10 @@ public class ExplosionBallScript : MonoBehaviour {
 
 	public void notMyTurn(){
 		isAbsorbing = true;
+	}
+
+	IEnumerator stopCollided(Collision _col){
+		yield return null;
+		_col.gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;
 	}
 }
