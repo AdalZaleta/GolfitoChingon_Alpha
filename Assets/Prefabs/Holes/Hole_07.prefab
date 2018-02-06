@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4566273298844998}
   - component: {fileID: 65003611968861640}
+  - component: {fileID: 114647388636268790}
   m_Layer: 0
   m_Name: H7
   m_TagString: Untagged
@@ -226,7 +227,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281166579013038}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.06, y: 0.06, z: 0.04}
@@ -248,3 +249,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114647388636268790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281166579013038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25740228cb59b345b546e0d3951a282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BallsDone: 0
+  nextP1: {fileID: 0}
+  nextP2: {fileID: 0}
+  nextP3: {fileID: 0}
+  cam: {fileID: 0}
