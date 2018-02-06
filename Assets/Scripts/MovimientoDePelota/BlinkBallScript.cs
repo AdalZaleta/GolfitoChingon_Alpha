@@ -10,18 +10,28 @@ public class BlinkBallScript : MonoBehaviour {
 	KeyCode Activate;
 	public GameObject Trap;
 	Rigidbody rigi;
+	ParticleSystem Vortex;
 	// Use this for initialization
 	void Start () {
 		AS = GetComponent<AudioSource>();
 		rigi = GetComponent<Rigidbody> ();
 		Activate = GetComponent<AllBallsNeedThis> ().Activate;
+		Vortex = GameObject.Find ("Vortex").GetComponent<ParticleSystem> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (Activate) && !GetComponent<AllBallsNeedThis> ().isWating) {
-			Blink ();
+			StartCoroutine (prepareBlink ());
 		}
+	}
+
+	IEnumerator prepareBlink(){
+		Vortex.Play ();
+		yield return new WaitForSeconds(0.75f);
+		Blink();
+		Vortex.Stop();
+		Vortex.Clear();
 	}
 
 	void Blink(){

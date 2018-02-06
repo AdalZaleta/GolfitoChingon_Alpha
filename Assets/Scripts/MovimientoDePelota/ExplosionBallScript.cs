@@ -8,6 +8,7 @@ public class ExplosionBallScript : MonoBehaviour {
 	public AudioClip ExplosionSound;
 	public float ExpurosionForce;
 	public float AtractionForce;
+	ParticleSystem pomf;
 	bool ammo = true;
 	bool isAbsorbing;
 	KeyCode Activate;
@@ -17,6 +18,7 @@ public class ExplosionBallScript : MonoBehaviour {
 		AS = GetComponent<AudioSource> ();
 		rigi = GetComponent<Rigidbody> ();
 		Activate = GetComponent<AllBallsNeedThis> ().Activate;
+		pomf = GameObject.Find ("Pomf").GetComponent<ParticleSystem>();
 	}
 	
 	// Update is called once per frame
@@ -25,6 +27,7 @@ public class ExplosionBallScript : MonoBehaviour {
 			rigi.AddForce (new Vector3 (0f, ExpurosionForce, 0f), ForceMode.Impulse);
 			AS.PlayOneShot (ExplosionSound);
 			ammo = false;
+			pomf.Play ();
 		}
 	}
 
