@@ -47,7 +47,8 @@ public class PlayerPhase : MonoBehaviour {
 			print ("Player 1 veolciti: " + Player1.GetComponent<Rigidbody> ().velocity);*/
 
 		//print ("p1: " + Player1.GetComponent<Rigidbody> ().velocity + " p2: " + Player2.GetComponent<Rigidbody> ().velocity + " p3: " + Player3.GetComponent<Rigidbody> ().velocity );
-		
+		cam.transform.position = currentPlayer.transform.position - new Vector3 (CamDir.x, CamDir.y + yOffset, CamDir.z) * offsetCamMag;
+		cam.transform.LookAt (currentPlayer.transform.position);
 		switch (phase) {
 		case 0:
 			shootUI.enabled = false;
@@ -57,10 +58,6 @@ public class PlayerPhase : MonoBehaviour {
 
 			Arrow.transform.position = currentPlayer.transform.position + direccion * 2;
 			Arrow.transform.rotation.SetFromToRotation (currentPlayer.transform.position, Arrow.transform.position);
-
-
-			cam.transform.position = currentPlayer.transform.position - new Vector3 (CamDir.x, CamDir.y + yOffset, CamDir.z) * offsetCamMag;
-			cam.transform.LookAt (currentPlayer.transform.position);
 
 			Arrow.transform.rotation.eulerAngles.Set (0f, cam.transform.rotation.eulerAngles.y, 0f);
 			if (Input.GetKey (Left)) {

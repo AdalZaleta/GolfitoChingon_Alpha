@@ -8,7 +8,6 @@ public class ExplosionBallScript : MonoBehaviour {
 	public AudioClip ExplosionSound;
 	public float ExpurosionForce;
 	public float AtractionForce;
-	public float magnitudeVisible;
 	bool ammo = true;
 	bool isAbsorbing;
 	KeyCode Activate;
@@ -22,7 +21,6 @@ public class ExplosionBallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		magnitudeVisible = rigi.velocity.magnitude;
 		if (Input.GetKeyDown (Activate) && !GetComponent<AllBallsNeedThis> ().isWating && ammo) {
 			rigi.AddForce (new Vector3 (0f, ExpurosionForce, 0f), ForceMode.Impulse);
 			AS.PlayOneShot (ExplosionSound);
