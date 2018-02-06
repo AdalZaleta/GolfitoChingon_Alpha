@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad56009b4ecb39458ded93be9aee21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  revertSeconds: 0
+  revertSeconds: 3
   BlinkTrapParent: {fileID: 0}
 --- !u!114 &114578069283852898
 MonoBehaviour:
@@ -212,13 +212,13 @@ MonoBehaviour:
   AS: {fileID: 0}
   ChoqueParedSFX: {fileID: 0}
   ChoquePelotaSFX: {fileID: 0}
-  invulerabilityTime: 0
+  invulerabilityTime: 3
   triggerInvBlink: 0
   beingAttractedExpl: 1
   isWating: 0
   Activate: 0
-  FuerzaPersonaje: 0
-  PresicionPersonaje: 0
+  FuerzaPersonaje: 3
+  PresicionPersonaje: 3
   lastStart: {fileID: 0}
   done: 0
 --- !u!114 &114746343141844590
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AS: {fileID: 0}
   BlinkSound: {fileID: 0}
-  BlinkDistance: 0
+  BlinkDistance: 3
   Trap: {fileID: 0}
 --- !u!135 &135400754240868406
 SphereCollider:

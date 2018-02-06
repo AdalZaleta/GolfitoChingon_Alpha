@@ -199,13 +199,13 @@ MonoBehaviour:
   AS: {fileID: 0}
   ChoqueParedSFX: {fileID: 0}
   ChoquePelotaSFX: {fileID: 0}
-  invulerabilityTime: 0
+  invulerabilityTime: 3
   triggerInvBlink: 0
   beingAttractedExpl: 1
   isWating: 0
   Activate: 0
-  FuerzaPersonaje: 0
-  PresicionPersonaje: 0
+  FuerzaPersonaje: 3
+  PresicionPersonaje: 3
   lastStart: {fileID: 0}
   done: 0
 --- !u!114 &114478791621354622
@@ -221,8 +221,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AS: {fileID: 0}
   GravitySound: {fileID: 0}
-  activeDuration: 0
-  GravityEmpowerRatio: 0
+  activeDuration: 3
+  GravityEmpowerRatio: 3
 --- !u!135 &135510689972853070
 SphereCollider:
   m_ObjectHideFlags: 1
