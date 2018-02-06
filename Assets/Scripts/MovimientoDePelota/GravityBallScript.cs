@@ -10,23 +10,31 @@ public class GravityBallScript : MonoBehaviour {
 	public float activeDuration;
 	public float GravityEmpowerRatio;
 	Rigidbody rigi;
+	bool canDeactivate;
 	// Use this for initialization
 	void Start () {
 		AS = GetComponent<AudioSource> ();
 		rigi = GetComponent<Rigidbody> ();
 		Activate = GetComponent<AllBallsNeedThis> ().Activate;
+		canDeactivate = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey (Activate) && !GetComponent<AllBallsNeedThis> ().isWating) {
-			StartCoroutine (antiGravity());
+			if (canDeactivate) {
+				canDeactivate = false;
+				turnOff();
+			}else
+				StartCoroutine (antiGravity());
 			AS.PlayOneShot (GravitySound);
 		}
 	}
 
 	void turnOn(){
+		print ("ZERO GRAVITY");
 		rigi.useGravity = false;
+		canDeactivate = true;
 	}
 
 	void turnOff(){

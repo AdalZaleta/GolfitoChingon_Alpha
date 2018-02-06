@@ -31,6 +31,11 @@ public class AllBallsNeedThis : MonoBehaviour {
 			OutOfBounds ();
 		}
 		EverythingMustEnd ();
+
+		if (done && gameObject.activeSelf)
+		{
+			gameObject.SetActive (false);
+		}
 	}
 
 	void OnCollisionEnter (Collision _col)
