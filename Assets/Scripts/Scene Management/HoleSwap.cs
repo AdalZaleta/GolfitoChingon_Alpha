@@ -9,9 +9,9 @@ public class HoleSwap : MonoBehaviour {
 	public Transform nextP1;
 	public Transform nextP2;
 	public Transform nextP3;
-	public GameObject P1;
-	public GameObject P2;
-	public GameObject P3;
+	GameObject P1;
+	GameObject P2;
+	GameObject P3;
 	public Camera cam;
 
 	void OnTriggerEnter (Collider _col)
@@ -41,19 +41,18 @@ public class HoleSwap : MonoBehaviour {
 			cam.GetComponent<PlayerPhase> ().SwitchHoles (nOfCurrentHole);
 
 			P1.transform.position = nextP1.position;
-			P2.transform.position = nextP2.position;
-			P3.transform.position = nextP3.position;
-
 			P1.GetComponent<AllBallsNeedThis> ().lastStart = nextP1;
-			P2.GetComponent<AllBallsNeedThis> ().lastStart = nextP2;
-			P3.GetComponent<AllBallsNeedThis> ().lastStart = nextP3;
-
 			P1.GetComponent<AllBallsNeedThis> ().done = false;
-			P2.GetComponent<AllBallsNeedThis> ().done = false;
-			P3.GetComponent<AllBallsNeedThis> ().done = false;
-
 			P1.SetActive (true);
+
+			P2.transform.position = nextP2.position;
+			P2.GetComponent<AllBallsNeedThis> ().lastStart = nextP2;
+			P2.GetComponent<AllBallsNeedThis> ().done = false;
 			P2.SetActive (true);
+
+			P3.transform.position = nextP3.position;
+			P3.GetComponent<AllBallsNeedThis> ().lastStart = nextP3;
+			P3.GetComponent<AllBallsNeedThis> ().done = false;
 			P3.SetActive (true);
 
 			BallsDone = 0;
