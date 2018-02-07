@@ -11,18 +11,20 @@ public class GravityBallScript : MonoBehaviour {
 	public float GravityEmpowerRatio;
 	Rigidbody rigi;
 	bool canDeactivate;
+	GameObject Antigrav;
 	// Use this for initialization
 	void Start () {
 		AS = GetComponent<AudioSource> ();
 		rigi = GetComponent<Rigidbody> ();
 		Activate = GetComponent<AllBallsNeedThis> ().Activate;
 		canDeactivate = false;
+		Antigrav = GameObject.Find ("Antigrav");
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (!rigi.useGravity)
-			print ("zero Gravity");
+		Antigrav.transform.position = transform.position;
 
 		if (Input.GetKeyDown (Activate) && !GetComponent<AllBallsNeedThis> ().isWating) {
 			if (canDeactivate) {
@@ -37,10 +39,13 @@ public class GravityBallScript : MonoBehaviour {
 	void turnOn(){
 		rigi.useGravity = false;
 		canDeactivate = true;
+		Antigrav.GetComponent<ParticleSystem>().Play ();
 	}
 
 	void turnOff(){
 		rigi.useGravity = true;
+		Antigrav.GetComponent<ParticleSystem>().Stop ();
+		Antigrav.GetComponent<ParticleSystem>().Clear ();
 	}
 
 	IEnumerator antiGravity(){
@@ -49,11 +54,7 @@ public class GravityBallScript : MonoBehaviour {
 		turnOff ();
 	}
 
-	void OnTriggerStay(Collider _col){
-		if (_col.CompareTag ("Gball") && GetComponent<AllBallsNeedThis>().isWating) {
-			_col.GetComponent<Rigidbody> ().AddForce (Vector3.down * GravityEmpowerRatio, ForceMode.Acceleration);
-		}
-	}
+
 
 	public void StartTurn(){
 		GetComponent<AllBallsNeedThis> ().beingAttractedExpl = true;

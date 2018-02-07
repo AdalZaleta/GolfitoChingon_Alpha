@@ -21,6 +21,7 @@ public class BlinkBallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Vortex.gameObject.transform.position = transform.position;
 		if (Input.GetKeyDown (Activate) && !GetComponent<AllBallsNeedThis> ().isWating) {
 			StartCoroutine (prepareBlink ());
 		}

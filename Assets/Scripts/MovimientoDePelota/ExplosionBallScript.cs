@@ -23,6 +23,7 @@ public class ExplosionBallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		pomf.gameObject.transform.position = transform.position;
 		if (Input.GetKeyDown (Activate) && !GetComponent<AllBallsNeedThis> ().isWating && ammo) {
 			rigi.AddForce (new Vector3 (0f, ExpurosionForce, 0f), ForceMode.Impulse);
 			AS.PlayOneShot (ExplosionSound);
@@ -36,7 +37,6 @@ public class ExplosionBallScript : MonoBehaviour {
 		if (_col.tag == "Gball" && GetComponent<AllBallsNeedThis> ().isWating && isAbsorbing) {
 			if (_col.gameObject.GetComponent<AllBallsNeedThis> ().beingAttractedExpl) {
 				_col.GetComponent<Rigidbody> ().AddForce (Vector3.one - (_col.transform.position - transform.position) * AtractionForce, ForceMode.Acceleration);
-				print ("atracted");
 			}
 		}
 	}
@@ -48,7 +48,6 @@ public class ExplosionBallScript : MonoBehaviour {
 			_col.rigidbody.velocity = Vector3.zero;
 			_col.gameObject.GetComponent<AllBallsNeedThis> ().beingAttractedExpl = false;
 			isAbsorbing = false;
-			print ("A ball colided");
 		}
 	}
 
