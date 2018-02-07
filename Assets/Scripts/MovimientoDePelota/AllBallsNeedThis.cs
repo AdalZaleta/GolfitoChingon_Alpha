@@ -19,6 +19,7 @@ public class AllBallsNeedThis : MonoBehaviour {
 	public float floorGluines;
 	public Transform lastStart;
 	public bool done;
+	public float RigVelocity;
 
 	void Start()
 	{
@@ -72,10 +73,11 @@ public class AllBallsNeedThis : MonoBehaviour {
 	}
 
 	void EverythingMustEnd(){
-		if (GetComponent<Rigidbody> ().velocity.magnitude <= 0.5f) {
-			GetComponent<Rigidbody> ().velocity -= GetComponent<Rigidbody> ().velocity.normalized * 0.1f * Time.deltaTime;
+		RigVelocity = GetComponent<Rigidbody> ().velocity.magnitude;
+		if (GetComponent<Rigidbody> ().velocity.magnitude <= 1.5f && GetComponent<Rigidbody> ().velocity.magnitude > 0.5f) {
+			GetComponent<Rigidbody> ().velocity -= GetComponent<Rigidbody> ().velocity.normalized * 1.0f * Time.deltaTime;
 		}
-		if (GetComponent<Rigidbody> ().velocity.magnitude <= 0.05f) {
+		else if (GetComponent<Rigidbody> ().velocity.magnitude <= 0.5f) {
 			GetComponent<Rigidbody> ().velocity = Vector3.zero;
 		}
 	}

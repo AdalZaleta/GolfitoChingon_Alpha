@@ -27,13 +27,17 @@ public class HoleSwap : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		cam.GetComponent<PlayerPhase> ().SwitchHoles (nOfCurrentHole);
-		P1 = GameObject.Find ("Explosion_Ball");
-		P2 = GameObject.Find ("Blink_Ball");
-		P3 = GameObject.Find ("Gravity_Ball");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (!P1)
+			P1 = GameObject.Find ("Explosion_Ball");
+		if (!P2)
+			P2 = GameObject.Find ("Blink_Ball");
+		if (!P3)
+			P3 = GameObject.Find ("Gravity_Ball");
+
 		if (BallsDone == 3)
 		{
 			cam.GetComponent<PlayerPhase> ().phase = 0;
