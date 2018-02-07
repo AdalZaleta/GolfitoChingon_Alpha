@@ -16,14 +16,11 @@ public class HoleSwap : MonoBehaviour {
 
 	void OnTriggerEnter (Collider _col)
 	{
-		Debug.Log ("Triggered");
 		if (_col.gameObject.CompareTag("Gball"))
 		{
-			Debug.Log ("Cleared");
 			_col.gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;
 			_col.gameObject.GetComponent<AllBallsNeedThis> ().done = true;
 			BallsDone++;
-			Debug.Log ("BallsDone: " + BallsDone);
 		}
 	}
 

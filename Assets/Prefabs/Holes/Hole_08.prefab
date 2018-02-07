@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4122900790015616}
   - component: {fileID: 65404612810130144}
+  - component: {fileID: 114244983663698208}
   m_Layer: 0
   m_Name: Limitbox
   m_TagString: Untagged
@@ -200,7 +201,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -219,7 +219,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -244,9 +243,9 @@ MeshCollider:
   m_Material: {fileID: 13400000, guid: e94b985e5ad37264bbc76e95826d7ed4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 3f52b4d64afff03499a7899b81d44e4a, type: 3}
 --- !u!65 &65347580287087740
@@ -268,7 +267,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1471889986870160}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.4455246, y: 1.6748028, z: 2.2441535}
@@ -290,6 +289,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114244983663698208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471889986870160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba47ef13632e5341a37cad69ef38f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHole: 0
 --- !u!114 &114432717445754752
 MonoBehaviour:
   m_ObjectHideFlags: 1
