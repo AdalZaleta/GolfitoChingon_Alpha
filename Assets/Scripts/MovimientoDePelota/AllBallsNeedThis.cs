@@ -16,6 +16,7 @@ public class AllBallsNeedThis : MonoBehaviour {
 	public KeyCode Activate;
 	public float FuerzaPersonaje;
 	public float PresicionPersonaje;
+	public float floorGluines;
 	public Transform lastStart;
 	public bool done;
 

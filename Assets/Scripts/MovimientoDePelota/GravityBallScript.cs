@@ -21,7 +21,10 @@ public class GravityBallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (Activate) && !GetComponent<AllBallsNeedThis> ().isWating) {
+		if (!rigi.useGravity)
+			print ("zero Gravity");
+
+		if (Input.GetKeyDown (Activate) && !GetComponent<AllBallsNeedThis> ().isWating) {
 			if (canDeactivate) {
 				canDeactivate = false;
 				turnOff();
@@ -32,7 +35,6 @@ public class GravityBallScript : MonoBehaviour {
 	}
 
 	void turnOn(){
-		print ("ZERO GRAVITY");
 		rigi.useGravity = false;
 		canDeactivate = true;
 	}
