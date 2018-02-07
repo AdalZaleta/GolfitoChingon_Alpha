@@ -91,6 +91,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1889284135997776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4892106173583444}
+  - component: {fileID: 65731921207697326}
+  m_Layer: 0
+  m_Name: Limitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4086903466943506
 Transform:
   m_ObjectHideFlags: 1
@@ -118,6 +134,7 @@ Transform:
   - {fileID: 4643783981788140}
   - {fileID: 4823123539101032}
   - {fileID: 4086903466943506}
+  - {fileID: 4892106173583444}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -159,6 +176,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4174739164341132}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4892106173583444
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889284135997776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4174739164341132}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23954125929939778
 MeshRenderer:
@@ -231,6 +261,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06, y: 0.06, z: 0.04}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65731921207697326
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889284135997776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.447451, y: 4.0817347, z: 1.6974491}
+  m_Center: {x: -0.120731734, y: 1.3742782, z: 0.41212916}
 --- !u!114 &114290647164052352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,6 +286,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BallsDone: 0
   nextP1: {fileID: 0}
-  nextP2: {fileID: 4643783981788140}
+  nextP2: {fileID: 0}
   nextP3: {fileID: 0}
   cam: {fileID: 0}

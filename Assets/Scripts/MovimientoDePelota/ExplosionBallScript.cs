@@ -10,7 +10,7 @@ public class ExplosionBallScript : MonoBehaviour {
 	public float AtractionForce;
 	ParticleSystem pomf;
 	bool ammo = true;
-	bool isAbsorbing;
+	public bool isAbsorbing;
 	KeyCode Activate;
 	Rigidbody rigi;
 	// Use this for initialization
