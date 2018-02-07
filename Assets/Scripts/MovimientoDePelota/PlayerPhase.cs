@@ -8,6 +8,7 @@ public class PlayerPhase : MonoBehaviour {
 	public GameObject Player1, Player2, Player3;
 	GameObject currentPlayer;
 	public Canvas shootUI;
+	public Canvas Leader;
 	public Slider fuerzaSlider;
 	public Camera cam;
 	public KeyCode Right;
@@ -31,6 +32,7 @@ public class PlayerPhase : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Leader.enabled = false;
 		currentPlayer = Player1;
 		direccion = Vector3.left;
 		CamDir = direccion;
@@ -102,6 +104,7 @@ public class PlayerPhase : MonoBehaviour {
 				Arrow.SetActive (false);
 
 			if (!playerChanger) {
+				cam.gameObject.GetComponent<Leaderboard> ().SumarPuntos (currentPlayer);
 				currentPlayer.GetComponent<AllBallsNeedThis> ().lastStart.position = currentPlayer.transform.position;
 				currentPlayer.GetComponent<Rigidbody> ().AddForce (direccion * fuerzaSlider.value * currentPlayer.GetComponent<AllBallsNeedThis> ().FuerzaPersonaje, ForceMode.Impulse);
 				StartCoroutine (changePlayer ());
@@ -123,6 +126,15 @@ public class PlayerPhase : MonoBehaviour {
 			}
 			//print (currentPlayer.GetComponent<Rigidbody> ().velocity);
 			break;
+		}//fin switch
+
+		if(Input.GetKey (KeyCode.Tab))
+		{
+			Leader.enabled = true;
+		}
+		if(Input.GetKeyUp (KeyCode.Tab))
+		{
+			Leader.enabled = false;
 		}
 	}
 
