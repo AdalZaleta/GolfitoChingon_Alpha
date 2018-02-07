@@ -13,6 +13,15 @@ public class GravityBallPassive : MonoBehaviour {
 
 	void Update(){
 		SuperGrav.transform.position = Ball.transform.position;
+
+		if (Ball.GetComponent<AllBallsNeedThis> ().isWating && !SuperGrav.isPlaying)
+			SuperGrav.Play ();
+		else if (!Ball.GetComponent<AllBallsNeedThis> ().isWating && SuperGrav.isPlaying)
+		{
+			SuperGrav.Stop ();
+			SuperGrav.Clear ();
+		}
+			
 	}
 
 	void OnTriggerStay(Collider _col){
