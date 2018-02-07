@@ -6,8 +6,15 @@ PhysicMaterial:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Slidy
+<<<<<<< HEAD
   dynamicFriction: 0.2
   staticFriction: 0.1
   bounciness: 0.2
   frictionCombine: 1
+=======
+  dynamicFriction: 0.3
+  staticFriction: 0.5
+  bounciness: 0.4
+  frictionCombine: 2
+>>>>>>> 0727b492ff43301f724700e03abadfb3118db4ca
   bounceCombine: 1
