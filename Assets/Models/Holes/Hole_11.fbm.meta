@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: fb9762fe1afbc8444a1647c08b8561cd
 folderAsset: yes
 timeCreated: 1518031720
+=======
+guid: 6ded68afae14395409f0cae88d454a36
+folderAsset: yes
+timeCreated: 1518034187
+>>>>>>> LeaderBoard
 licenseType: Free
 DefaultImporter:
   userData: 

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 3ba715661c9e6e54b865b428f227165b
 timeCreated: 1518031721
+=======
+guid: 01951d920fa3beb4b9d979ad3d7262bf
+timeCreated: 1518034188
+>>>>>>> LeaderBoard
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
