@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 9695caea1215ba54886d9f001a9c66a2
+timeCreated: 1517705929
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Grenadier NF
+  fontNames:
+  - Grenadier NF
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
