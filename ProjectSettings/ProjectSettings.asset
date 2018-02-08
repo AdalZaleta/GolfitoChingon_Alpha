@@ -598,7 +598,11 @@ PlayerSettings:
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
     UNet: 1
+<<<<<<< HEAD
   facebookSdkVersion: 7.9.1
+=======
+  facebookSdkVersion: 7.9.4
+>>>>>>> GalaxyLord_Branch
   apiCompatibilityLevel: 2
   cloudProjectId: f2fc696c-1824-4390-8594-6c92db3d9c47
   projectName: GolfitoChingon_Alpha_3X_Hentai

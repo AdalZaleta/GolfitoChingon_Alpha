@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 m_EditorVersion: 5.5.2f1
 =======
 m_EditorVersion: 2017.3.0f3
 >>>>>>> Aritos_Godlike_Branch
+=======
+m_EditorVersion: 5.5.2f1
+>>>>>>> GalaxyLord_Branch

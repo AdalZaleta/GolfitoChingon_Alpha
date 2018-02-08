@@ -1,9 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Resources/Skybox C.meta
 guid: 2c1b15d4a51777643833b1256ed815b0
 folderAsset: yes
 timeCreated: 1517949078
 licenseType: Free
+=======
+guid: a5289e1b1e8a120488785ae4de0f89ee
+folderAsset: yes
+>>>>>>> GalaxyLord_Branch:Assets/Materials.meta
 DefaultImporter:
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 
