@@ -104,13 +104,10 @@ public class PlayerPhase : MonoBehaviour {
 				Arrow.SetActive (false);
 
 			if (!playerChanger) {
-<<<<<<< HEAD
 				float levantamiento = fuerzaSlider.value - 0.5f;
 				if (levantamiento <= 0)
 					levantamiento = 0;
-=======
 				cam.gameObject.GetComponent<Leaderboard> ().SumarPuntos (currentPlayer);
->>>>>>> LeaderBoard
 				currentPlayer.GetComponent<AllBallsNeedThis> ().lastStart.position = currentPlayer.transform.position;
 				currentPlayer.GetComponent<Rigidbody> ().AddForce ((direccion + new Vector3(0f, currentPlayer.GetComponent<AllBallsNeedThis>().floorGluines * levantamiento, 0f)) * fuerzaSlider.value * currentPlayer.GetComponent<AllBallsNeedThis> ().FuerzaPersonaje, ForceMode.Impulse);
 				StartCoroutine (changePlayer ());
