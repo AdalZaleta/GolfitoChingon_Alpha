@@ -1,33 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WinScript : MonoBehaviour {
-	public GameObject Hole;
-	public int WinnerExp;
-	public int WinnerBlink;
-	public int WinnerGravity;
-	public int HoleIn;
-	private Leaderboard Winner;
+	int HoleIn;
+	public Camera cam;
+	public Canvas Lead;
 
 	void Start()
 	{
-		Winner = GameObject.Find ("LeaderBoard").GetComponent<Leaderboard> ();
 	}
 
 	void Update ()
 	{
 		if(HoleIn == 3)
 		{
-			Winner.Winner();
+			Lead.enabled = true;
+			cam.GetComponent<Leaderboard> ().Winner ();
 		}
 	}
 
-	void OnTriggerEnter (Collider _lastRound)
+	void OnTriggerEnter (Collider _col)
 	{
-		if(_lastRound.gameObject.CompareTag("Gball"))
+		if(_col.gameObject.CompareTag("Gball"))
 		{
-			HoleIn += 1;
+			_col.gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;
+			_col.gameObject.GetComponent<AllBallsNeedThis> ().done = true;
+			HoleIn ++;
 		}
+			
 	}
 }

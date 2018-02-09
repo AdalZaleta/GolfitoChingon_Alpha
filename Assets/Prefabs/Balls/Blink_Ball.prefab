@@ -40,8 +40,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1228988472123268}
   m_LocalRotation: {x: -0.5877423, y: 0.3931399, z: 0.3931399, w: 0.5877423}
-  m_LocalPosition: {x: -0.0064849854, y: 7.0810013, z: -9.524509}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -23, y: 0, z: 30}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,6 +55,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -72,6 +73,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -96,7 +98,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -201,11 +203,12 @@ MonoBehaviour:
   beingAttractedExpl: 1
   isWating: 0
   Activate: 113
-  FuerzaPersonaje: 20
+  FuerzaPersonaje: 50
   PresicionPersonaje: 3
-  floorGluines: 0.2
+  floorGluines: 0.3
   lastStart: {fileID: 0}
   done: 0
+  RigVelocity: 0
 --- !u!114 &114746343141844590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AS: {fileID: 0}
   BlinkSound: {fileID: 0}
-  BlinkDistance: 3
+  BlinkDistance: 5
   Trap: {fileID: 1609872234688370, guid: 448cd324e4257264f98e3b066bdccd14, type: 2}
 --- !u!135 &135400754240868406
 SphereCollider:
@@ -227,7 +230,7 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1228988472123268}
-  m_Material: {fileID: 13400000, guid: 7af0075c14d9acf40ba890923f0732f1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

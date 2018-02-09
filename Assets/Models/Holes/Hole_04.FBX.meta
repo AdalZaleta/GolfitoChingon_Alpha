@@ -45,7 +45,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 'Material #101'
-    second: {fileID: 2100000, guid: 9498442c64e388b418baddc4d2672fd5, type: 2}
+    second: {fileID: 2100000, guid: f3092bf2d43848a409f08bc87a27cebd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -55,7 +55,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 'Material #171'
-    second: {fileID: 2100000, guid: a66081ecf6a67a14ebbeb901e1450ef7, type: 2}
+    second: {fileID: 2100000, guid: e5a11e4cd14e26a4aa0f556b2883a4b9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -113,7 +113,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
