@@ -11,6 +11,9 @@ public class Leaderboard : MonoBehaviour {
 	public int Puntoblink;
 	public Text Gravity;
 	public int Puntogravity;
+	public GameObject CrownBlink;
+	public GameObject CrownExp;
+	public GameObject CrownGrav;
 
 	public void SumarPuntos(GameObject _pelota)
 	{
@@ -28,6 +31,19 @@ public class Leaderboard : MonoBehaviour {
 		{
 			Puntogravity += 1;
 			Gravity.text = Puntogravity.ToString ();
+		}
+	}
+
+	public void Winner()
+	{
+		if (Puntoexp < Puntoblink && Puntoexp < Puntogravity) {
+			CrownExp.SetActive (true);
+		}
+		if (Puntoblink < Puntoexp && Puntoblink < Puntogravity) {
+			CrownBlink.SetActive (true);
+		}
+		if (Puntogravity < Puntoexp && Puntogravity < Puntoblink) {
+			CrownGrav.SetActive (true);
 		}
 	}
 }
